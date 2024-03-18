@@ -1,16 +1,19 @@
-{% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %} <!-- Herda do template base.html -->
+{% import "bootstrap/wtf.html" as wtf %} <!-- Importa o formulário do Bootstrap -->
 
-{% block title %}Flasky{% endblock %}
+{% block title %}Flasky{% endblock %} <!-- Define o título da página -->
 
-{% block page_content %}
+{% block page_content %} <!-- Define o conteúdo da página -->
 <div class="container">
+    <!-- Exibe os dados de acesso -->
     <fieldset>
     <legend>Dados do acesso</legend>
     <h3>Você está acessando o sistema por meio do usuário {{usuario}}</h3>
     </fieldset>   
 </div>
 <br>
+<!-- Exibe a data e hora local formatada usando Moment.js -->
 <p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+<!-- Exibe quanto tempo passou desde a hora atual -->
 <p>That was {{ moment(current_time).fromNow(refresh=True) }}.</p>
 {% endblock %}
