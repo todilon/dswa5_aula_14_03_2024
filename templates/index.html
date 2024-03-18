@@ -1,14 +1,18 @@
-{% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %} <!-- Herda do template base.html -->
+{% import "bootstrap/wtf.html" as wtf %} <!-- Importa o formulário do Bootstrap -->
 
-{% block title %}Flasky{% endblock %}
+{% block title %}Flasky{% endblock %} <!-- Define o título da página -->
 
-{% block page_content %}
+{% block page_content %} <!-- Define o conteúdo da página -->
 <div class="page-header">
+    <!-- Saudação personalizada -->
     <h1>Olá, {% if name %}{{name}} {{surname}}{% else %}Estranho{% endif %}!</h1>
+    <!-- Informações sobre a instituição de ensino -->
     <h3>A sua Insituição de ensino é {{institution}}</h3>
+    <!-- Informações sobre a disciplina -->
     <h3>Está cursando a disciplina de {{choices[discipline]}}</h3>
     <br>
+    <!-- Informações sobre o IP do computador remoto e o host da aplicação -->
     <h4>O IP do computador remoto é: {{remote_addr}}</h4>
     <h4>O host da aplicação é: {{remote_host}}</h4>   
 </div>
