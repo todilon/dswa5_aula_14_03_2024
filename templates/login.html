@@ -1,17 +1,19 @@
 {% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %} <!-- Importa o formulário do Bootstrap -->
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %}Flasky{% endblock %}
 
-{% block page_content %} <!-- Define o conteúdo da página -->
-<div class="container">
-    <!-- Título da página de login -->
-    <h2>Login:</h2>
-    <!-- Renderiza o formulário de login de forma rápida usando o Flask-WTF -->
-    {{ wtf.quick_form(form) }}
+{% block page_content %}
 
+
+<div class="custom-container">
+    <div class="custom-form">
+        <h2 class="text-center mb-4">Login</h2>
+        <form class="form-signin" method="POST" action="">
+            {{ wtf.quick_form(form, button_map={'submit': 'btn btn-lg btn-primary btn-block'}) }}
+        </form>
+    </div>
+    <p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+    <p>That was {{ moment(current_time).fromNow(refresh=True) }}.</p>
 </div>
-<br>
-<p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
-<p>That was {{ moment(current_time).fromNow(refresh=True) }}.</p>
 {% endblock %}
