@@ -1,11 +1,13 @@
 {% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/wtf.html" as wtf %} <!-- Importa o formulário do Bootstrap -->
 
 {% block title %}Flasky{% endblock %}
 
-{% block page_content %}
+{% block page_content %} <!-- Define o conteúdo da página -->
 <div class="container">
+    <!-- Título da página de login -->
     <h2>Login:</h2>
+    <!-- Renderiza o formulário de login de forma rápida usando o Flask-WTF -->
     {{ wtf.quick_form(form) }}
 
 </div>
